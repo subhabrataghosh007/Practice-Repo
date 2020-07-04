@@ -1,7 +1,7 @@
 package dynamicprogramming.similar.knapsack;
 
 
-public class KapsackProblem {
+public class KnapsackProblem {
 
 	static Integer[][] table;
 	static Integer[][] t_TopDown;
@@ -16,7 +16,7 @@ public class KapsackProblem {
 		Integer[] values = { 1, 4, 5, 7, 100, 3, 6, 56, 23, 89, 67, 33, 11, 22, 424, 111, 45, 56 };
 		int W = 950;
 
-		KapsackProblem kp = new KapsackProblem();
+		KnapsackProblem kp = new KnapsackProblem();
 		
 		long endTime = 0;
 		long startTime = 0;
