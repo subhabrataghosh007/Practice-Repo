@@ -1,6 +1,6 @@
 package dynamicprogramming.similar.LCSubsequence;
 
-public class LongestCommonSubsequesce {
+public class LongestCommonSubsequence {
 
 	static Integer[][] t;
 
@@ -16,7 +16,7 @@ public class LongestCommonSubsequesce {
 		long startTime = 0;
 		int val = 0;
 
-		LongestCommonSubsequesce subsequesce = new LongestCommonSubsequesce();
+		LongestCommonSubsequence subsequesce = new LongestCommonSubsequence();
 
 		System.out.println("----------------------Recursive-------------");
 		startTime = System.currentTimeMillis();
