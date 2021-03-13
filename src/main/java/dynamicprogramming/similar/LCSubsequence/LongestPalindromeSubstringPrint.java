@@ -1,10 +1,10 @@
 package dynamicprogramming.similar.LCSubsequence;
 
-public class LongestPalindromeSubstring {
+public class LongestPalindromeSubstringPrint {
 
 	public static void main(String[] args) {
 
-		LongestPalindromeSubstring subsequence = new LongestPalindromeSubstring();
+		LongestPalindromeSubstringPrint subsequence = new LongestPalindromeSubstringPrint();
 		
 		//String a = "AGBCBA";
 		String a = "aacdefcaa";
@@ -20,19 +20,35 @@ public class LongestPalindromeSubstring {
 		Integer[][] t = new Integer[m+1][n+1];
 		
 		int max = -1;
+		int row = 0, col = 0;
+		
 		for (int i = 0; i < m+1; i++) {
 			for (int j = 0; j < n+1; j++) {
 				if (i == 0 || j == 0)
 					t[i][j] = 0;
-				else if (a.charAt(i - 1) == b.charAt(j - 1))
+				else if (a.charAt(i - 1) == b.charAt(j - 1)) {
 					t[i][j] = 1 + t[i-1][j-1];
+					if (max < t[i][j]) {
+						max = t[i][j];
+						row = i;
+						col = j;
+					}
+				}
 				else
 					t[i][j] = 0;
-				
-				max = Math.max(max, t[i][j]);
 			}
 		}
 		
+		StringBuilder sb = new StringBuilder();
+        //while (t[row][col] != 0) {
+        while (row >0 && col >0) {
+        	
+        	sb.append(a.charAt(row-1));
+        	row--;
+        	col--;
+        }
+        
+        System.out.println(sb.reverse());
 		return max;
 	}
 	
